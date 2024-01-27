@@ -25,7 +25,7 @@ adapted_embeddings = patch(original_embedding_fn("SAMPLE_TEXT"))
 ```
 
 # Synthetic Label Generation 🧪
-No user feedback to use as labels? 🤔 Create synthetic label the `LabelGenerator` util
+No user feedback to use as labels? 🤔 Create synthetic labels with the `LabelGenerator` util
 
 ```python
 from embedding_adapter.utils import LabelGenerator
