@@ -54,7 +54,7 @@ class EmbeddingAdapter(BaseModel):
         """
         return torch.nn.MSELoss()(self._model(query_embedding, document_embedding, adapter_matrix), label)
 
-    def fit(self, query_embedding, document_embedding, label):
+    def fit(self, query_embedding, document_embedding, label, num_epochs: int = 100):
         """
         Trains the adapter matrix using the provided query embeddings, document embeddings, and labels.
 
@@ -81,7 +81,7 @@ class EmbeddingAdapter(BaseModel):
         adapter_matrix = torch.randn(self._embedding_len, self._embedding_len, requires_grad=True)
 
         # Train the adapter matrix
-        for epoch in tqdm(range(100)):
+        for epoch in tqdm(range(num_epochs)):
             for query_embedding, document_embedding, label in self._dataset:
                 loss = self._mse_loss(query_embedding, document_embedding, adapter_matrix, label)
 
