@@ -2,10 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name='embedding_adapter',
-    version='0.1.0',
+    version='0.1.1',
     author='Gabriel Chua',
     author_email='cyzgab@gmail.com',
     description='A lightweight open-source package to fine-tune embedding models.',
+    license='MIT',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     packages=find_packages(),
