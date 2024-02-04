@@ -24,6 +24,15 @@ patch = EmbeddingAdapter.patch()
 adapted_embeddings = patch(original_embedding_fn("SAMPLE_TEXT"))
 ```
 
+# Use Cases/Why do I need to tune my embeddings ❓
+
+Embeddings are predominantly utilized for Retrieval Augmented Generation (RAG) or semantic search applications. However, their effectiveness can significantly vary depending on the context. This is where the need for tuning comes into play.
+
+Consider training an adaptor for your pre-trained embedding model, such as OpenAI's text-embedding-3-small or the open-source gte-large. This customization enables your model to interpret tokens accurately within the specific context of your application. For example, the word "Pandas" 🐼 could refer to the animal or the widely used Python library for data manipulation. Without tuning, your model may not distinguish between these vastly different contexts.
+
+Moreover, tuning your embeddings is crucial if you aim to utilize a smaller model—perhaps due to hardware constraints like the absence of GPUs for inference. In such cases, an adaptor can enhance retrieval performance, ensuring efficiency without compromising on accuracy. 
+
+
 # Synthetic Label Generation 🧪
 No user feedback to use as labels? 🤔 Create synthetic labels with the `LabelGenerator` util
 
