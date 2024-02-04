@@ -13,8 +13,8 @@ pip install embedding_adapter
 ```python
 from embedding_adapter import EmbeddingAdapter
 adapter = EmbeddingAdapter()
-EmbeddingAdapter.fit(query_embeddings, document_embeddings, labels)
-EmbeddingAdapter.transform(new_embeddings)
+adapter.fit(query_embeddings, document_embeddings, labels)
+adapter.transform(new_embeddings)
 ```
 
 Once you've trained the adapter, you can use patch your pre-trained embedding model.
