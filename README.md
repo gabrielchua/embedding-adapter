@@ -20,7 +20,7 @@ adapter.transform(new_embeddings)
 Once you've trained the adapter, you can use patch your pre-trained embedding model.
 
 ```python
-patch = EmbeddingAdapter.patch()
+patch = adapter.patch()
 adapted_embeddings = patch(original_embedding_fn("SAMPLE_TEXT"))
 ```
 
